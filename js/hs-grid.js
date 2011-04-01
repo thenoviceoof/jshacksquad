@@ -6,10 +6,10 @@ function slide() {
 }
 
 $(document).ready(function() {
-	$("nav#left").onclick(function(e){
+	$("nav#left").click(function(e){
 		alert("hello world!");
 	    });
-	$("nav#right").onclick(function(e){
+	$("nav#right").click(function(e){
 		alert("hello world!");
 	    });
     });
