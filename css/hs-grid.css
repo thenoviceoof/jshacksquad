@@ -70,6 +70,8 @@ body {
     top: -41px;
     padding: 5px 0 5px 0;
     font-family: Arvo;
+    -moz-border-radius:0 0 8px 8px;
+    border-radius:0 0 8px 8px;
 }
 
 #current-tutorial {
