@@ -1,3 +1,5 @@
+/* Stuff added for the JS Hack Squad ------------------------------ */
+
 #left {
 }
 
@@ -13,6 +15,8 @@ nav.slide {
     z-index:10;
     margin:0; padding:0;
 }
+
+/* Stuff from the Design Hack Squad ------------------------------ */
 
 .container_4 div {
     outline: 1px solid #ccc;
