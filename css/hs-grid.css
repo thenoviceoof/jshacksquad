@@ -1,31 +1,59 @@
 /* Stuff added for the JS Hack Squad ------------------------------ */
 
-#left {
+#content {
+    display:block;
 }
 
-#right {
+#content-container {
+    margin-top:2em;
+    margin-bottom:2em;
 }
 
-nav.slide {
+#current-tutorial {
+    font-size: 1.2em;
+    width:370px;
     display:inline-block;
-    position:absolute;
-    height:4em;
-    width:4em;
-    background-color:gray;
-    opacity:0.5;
-    z-index:10;
-    margin:0; padding:0;
+}
+
+#current-tutorial a {
+    display:inline-block;
+}
+
+#slider {
+    overflow:scroll;
+    margin:1em;
+}
+
+#sidebar {
+    display:inline-block;
+    vertical-align:top;
+}
+
+#categories {
+    height:20em;
+    overflow:auto;
+}
+
+#categories ul {
+    list-style-type:none;
+    margin:0; padding-left:0;
+}
+
+#categories li {
+    outline:1px black solid;
+    margin:0.5em;
+    padding:0.5em;
+}
+
+#categories a {
+    color:black;
+    text-decoration:none;
+}
+#categories a:visited {
+    color:black;
 }
 
 /* Stuff from the Design Hack Squad ------------------------------ */
-
-.container_4 div {
-    outline: 1px solid #ccc;
-}
-
-body {
-    font: 13px/20px Helvetica;
-}
 
 #nav-area {
     margin-top: 20px;
@@ -75,12 +103,6 @@ body {
     border-radius:0 0 8px 8px;
 }
 
-#current-tutorial {
-    font-size: 1.2em;
-    margin-bottom: 0;
-    margin-top: 10px;
-}
-
 #featured {
     height: 370px;
     margin-bottom: 20px;
@@ -117,14 +139,22 @@ body {
     border-radius: 8px;
 }
 
+/* Stuff from 960.gs---------------------------------------------- */
+
+.container_4 div {
+    outline: 1px solid #ccc;
+}
+
+body {
+    font: 13px/20px Helvetica;
+}
+
 /* Containers
    ----------------------------------------------------------------------------------------------------*/
 .container_4 {
     margin-left: auto;
     margin-right: auto;
     width: 568px;
-    
-    
 }
 
 /* Grid >> Children (Alpha ~ First, Omega ~ Last)

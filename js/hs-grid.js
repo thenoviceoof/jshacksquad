@@ -3,13 +3,11 @@
 // --------------------------------------------------------------------
 
 function slideLeft() {
-    $("#slideImg");
 }
 function slideRight() {
 }
 
 function positionOverlays() {
-    $("nav#left").css("left",900);
 }
 
 $(document).ready(function() {

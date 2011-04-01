@@ -10,7 +10,7 @@
     <script src="js/jquery-1.5.2.min.js"></script>
     <script src="js/hs-grid.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+    <!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo"> -->
     <link rel="stylesheet" type="text/css" href="css/hs-grid.css" />
   </head>
 
@@ -31,32 +31,43 @@
 
     </div>
 
+    <!-- JS Hack Squad stuff -->
     <div id="content" class="container_4">
+      <div id="content-container" class="grid_4">
 
-      <div id="featured" class="grid_4">
-        <div id="current-tutorial" class="tut">
-          <!-- JS Hack Squad stuff -->
-          <nav class="slide" id="left"></nav>
-          <nav class="slide" id="right"></nav>
-	  <a href="#">
-            <img src="images/tut.png" alt="tutorial" width="538" />
-	  </a>
-          <!-- End here -->
-          <p class="caption">UNIX Tutorial</p>
-        </div>
+	<div id="current-tutorial">
+	  <div id="slidee">
+	    <a href="#">
+	      <img src="images/tut.png" alt="tutorial" width="370px" />
+	    </a>
+	  </div>
+
+	  <div id="slider">
+	    
+	  </div>
+	</div>
+
+	<div id="sidebar">
+	  <nav id="search">
+	    <input id="search_box" type="text" />
+	  </nav>
+
+	  <nav id="categories">
+	    <ul>
+	      <a href="#"><li>Lol Cat</li></a>
+	      <a href="#"><li>Rofl Cat</li></a>
+	      <a href="#"><li>ROFLCOPTER</li></a>
+	      <a href="#"><li>OMG Cat</li></a>
+	      <a href="#"><li>ADI Cat</li></a>
+	      <a href="#"><li>ZOMG Cat</li></a>
+	      <a href="#"><li>ZOMG Cat</li></a>
+	    </ul>
+	  </nav>
+	</div>
+
       </div>
-
-      <div id="prev" class="grid_2 tut">
-        <img src="images/windows1.jpg" alt="tutorial" width="254" />
-        <p class="caption">A caption.</p>
-      </div>
-
-      <div id="next" class="grid_2">
-        <img src="images/windows2.jpg" alt="tutorial" width="254" />
-        <p class="caption">A caption.</p>
-      </div>
-
     </div>
+    <!-- End here -->
 
     <div id="footer" class="container_4">
       <div id="foot" class="grid_4">
