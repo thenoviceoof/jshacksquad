@@ -1,0 +1,280 @@
+#left {
+}
+
+#right {
+}
+
+nav.slide {
+    display:inline-block;
+    position:relative;
+    height:4em;
+    width:4em;
+    background-color:green;
+    z-index:10;
+    margin:0; padding:0;
+}
+
+.container_4 div {
+    outline: 1px solid #ccc;
+}
+
+body {
+    font: 13px/20px Helvetica;
+}
+
+#nav-area {
+    margin-top: 20px;
+}
+
+#nav-area ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+#nav-area ul li {
+    width: 112px;
+    background-color: #eee;
+    float: left;
+}
+
+#nav-area ul li a {
+    display: block;
+    text-align: center;
+    width: 112px;
+    height: 30px;
+    padding: 11px 0 0 0;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+#nav-area ul li a:hover {
+    background-color: #ccc;
+}
+
+.tut img {
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.caption {
+    background-color: #eee;
+    text-align: center;
+    position: relative;
+    top: -41px;
+    padding: 5px 0 5px 0;
+    font-family: Arvo;
+}
+
+#current-tutorial {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#featured {
+    height: 370px;
+    margin-bottom: 20px;
+}
+
+#prev, #next {
+    margin-top: 0;
+    height: 200px;
+}
+
+#foot a#adi {
+    border: none;
+    float: right;
+    padding: 5px;
+}
+
+#foot p {
+    float: left;
+    padding-left: 10px;
+}
+
+#foot a#adi:hover {
+    background-color: #ccc;
+}
+
+#foot a#adi img {
+    border: none;
+}
+
+#foot {
+    background: -moz-linear-gradient(0% 100% 90deg,#EDEDED, #FFFFFF);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#EDEDED));
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* Containers
+   ----------------------------------------------------------------------------------------------------*/
+.container_4 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 568px;
+    
+    
+}
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+   ----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+    margin-left: 0 !important;
+}
+
+.omega {
+    margin-right: 0 !important;
+}
+
+
+
+/* Grid >> Global
+   ----------------------------------------------------------------------------------------------------*/
+
+.grid_1, 
+.grid_2, 
+.grid_3,
+.grid_4{
+    display:inline;
+    float: left;
+    position: relative;
+    margin-left: 15.0px;
+    margin-right: 15.0px;
+}
+
+
+/* Grid >> 2 Columns
+   ----------------------------------------------------------------------------------------------------*/
+
+.container_4 .grid_1{
+    width:112px;
+}
+
+.container_4 .grid_2{
+    width:254px;
+}
+
+.container_4 .grid_3{
+    width:396px;
+}
+
+.container_4 .grid_4{
+    width:538px;
+}
+
+
+
+
+
+/* Prefix Extra Space >> 2 Columns
+   ----------------------------------------------------------------------------------------------------*/
+
+.container_4 .prefix_1 {
+    padding-left:142px;
+}
+
+.container_4 .prefix_2 {
+    padding-left:284px;
+}
+
+.container_4 .prefix_3 {
+    padding-left:426px;
+}
+
+
+
+/* Suffix Extra Space >> 2 Columns
+   ----------------------------------------------------------------------------------------------------*/
+
+.container_4 .suffix_1 {
+    padding-right:142px;
+}
+
+.container_4 .suffix_2 {
+    padding-right:284px;
+}
+
+.container_4 .suffix_3 {
+    padding-right:426px;
+}
+
+
+
+/* Push Space >> 2 Columns
+   ----------------------------------------------------------------------------------------------------*/
+
+.container_4 .push_1 {
+    left:142px;
+}
+
+.container_4 .push_2 {
+    left:284px;
+}
+
+.container_4 .push_3 {
+    left:426px;
+}
+
+
+
+
+
+/* Pull Space >> 2 Columns
+   ----------------------------------------------------------------------------------------------------*/
+
+.container_4 .pull_1 {
+    right:142px;
+}
+
+.container_4 .pull_2 {
+    right:284px;
+}
+
+.container_4 .pull_3 {
+    right:426px;
+}
+
+
+
+
+/* Clear Floated Elements
+   ----------------------------------------------------------------------------------------------------*/
+
+
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
