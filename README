@@ -1,4 +1,23 @@
 JS Example for Hack Squad on April 2nd, 2011
 --------------------------------------------------
 
-Nothing here yet
+Example!
+
+To scroll through videos.
+
+Inspiration:
+http://baijs.nl/tinycircleslider/
+http://jqueryfordesigners.com/jquery-infinite-carousel/
+
+
+TODO
+--------------------------------------------------
+Add AJAX
+    loading the video lists
+Discretize the scrolling
+Add a title bar for the videos
+
+
+LICENSE
+--------------------------------------------------
+This is example code, you can do whatever you want with it.
