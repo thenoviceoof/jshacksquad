@@ -1,4 +1,4 @@
 { videos:
-  [ {url: "images/adi.png"},
-    {url: "images/tut.png"},]
+  [ {url: "images/adi.png", caption: "hello"},
+    {url: "images/tut.png", caption: "world"},]
 }

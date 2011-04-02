@@ -4,7 +4,7 @@
     display:block;
 }
 
-#content div {
+#content div, #content nav {
     outline:1px gray solid;
 }
 

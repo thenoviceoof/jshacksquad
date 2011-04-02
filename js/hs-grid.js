@@ -2,15 +2,10 @@
 // hs-grid.js
 // --------------------------------------------------------------------
 
-function returnSlider(slider) {
-    // if the slider is not already occupied
-    // otherwise, we get a bajillion callbacks
-    if($(slider).slider("value") == 50) {
-	setTimeout(function(){returnSliderToMiddle(slider)},100);
-    }
-}
+// for HackSquad
+var hs = {};
 
-function returnSliderToMiddle(slider) {
+hs.returnSliderToMiddle = function (slider) {
     var val = $(slider).slider("value");
     // if within some threshold, stop (base case)
     if(Math.abs(val-50) < 5) {
@@ -23,14 +18,15 @@ function returnSliderToMiddle(slider) {
     $("#slidee").contents().find("#cont")
 	.animate({left:"+="+velocity*5},0);
     // recurse
-    setTimeout(function(){returnSliderToMiddle(slider)},50);
+    setTimeout(function(){hs.returnSliderToMiddle(slider)},50);
 }
 
-function initOverlays(target, actionLeft, actionRight) {
+hs.initOverlays = function (target, actionLeft, actionRight) {
     var pos = $(target).offset();
     var w = $(target).width();
     var h = 238;//$(target).height(); // not working for some reason
     // haven't defined stuff yet, add navigational elements
+    
     if(!$("#left")[0]) {
 	var left = $("<nav/>").attr("id","left");
 	var lefta = $("<nav/>").attr("id","leftarrow");
@@ -63,8 +59,28 @@ function initOverlays(target, actionLeft, actionRight) {
     $("#right").click(actionRight);
 }
 
+// the actual things that move right or left
+////// NOTE: discretize the movement
+hs.moveLeft = function () {
+    var left = $("#slidee").contents().find("#cont").offset().left;
+    // round to nearest 370
+    var targetLeft = left + (left%370) + 370;
+    $("#slidee").contents().find("#cont")
+	.animate({left:targetLeft},300);
+}
+hs.moveRight = function () {
+    var right = $("#slidee").contents().find("#cont").offset().left;
+    // round to nearest 370
+    var targetRight = right - (right%370) - 370;
+    $("#slidee").contents().find("#cont")
+	.animate({left:targetRight},300);
+}
+
+hs.snapTo = function () {
+}
+
 ////// AJAX this?
-function loadVideos() {
+hs.loadVideos = function () {
     var cont = $("<div/>").attr("id","cont")
 	.css("position","absolute");
     var a = $("<a/>").attr("href","#");
@@ -76,30 +92,18 @@ function loadVideos() {
 	.css("padding",0)
 	.css("margin",0);
     $("#slidee").contents().find("body").append(cont);
-}
-
-// the actual things that move right or left
-////// NOTE: discretize the movement
-function moveLeft() {
-    var left = $("#slidee").contents().find("#cont").offset().left;
-    // round to nearest 370
-    var targetLeft = left + (left%370) + 370;
-    $("#slidee").contents().find("#cont")
-	.animate({left:targetLeft},300);
-}
-function moveRight() {
-    var right = $("#slidee").contents().find("#cont").offset().left;
-    // round to nearest 370
-    var targetRight = right - (right%370) - 370;
-    $("#slidee").contents().find("#cont")
-	.animate({left:targetRight},300);
+    $.ajax({
+	    url: "data.json",
+	    success: function(data) {alert(data);},
+	    dataType: "json"
+	});
 }
 
 // initial set
 $(function() {
 	$("#slider").slider({value:50,});
 	$("#slider").bind("slidestop",function(event, ui) {
-		returnSliderToMiddle(this);
+		hs.returnSliderToMiddle(this);
 	    });
     });
 
@@ -107,16 +111,17 @@ $(document).ready(function() {
 	// timeout was here b/c of img loading earlier
 	// may or may not need now
 	setTimeout(function() {
-		initOverlays($("#slidee-cont")[0],
-			     function(){moveLeft();},
-			     function(){moveRight()});
+		hs.initOverlays($("#slidee-cont")[0],
+				       function(){hs.moveLeft();},
+				       function(){hs.moveRight()});
 	    }, 100);
-	loadVideos();
+	hs.loadVideos();
 
 	// do have to handle resizing
 	// $(document).resize(positionOverlays);
 
-	// to prevent page transitions, use AJAX instead
+	// to prevent page transitions
+	// use AJAX instead
 	$(".categories").click(function(e){
 		e.preventDefault();
 		return false;
