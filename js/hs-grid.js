@@ -81,13 +81,18 @@ function loadVideos() {
 // the actual things that move right or left
 ////// NOTE: discretize the movement
 function moveLeft() {
-    var left = $("#slidee").contents().find("#cont").css("left");
-    left ;
+    var left = $("#slidee").contents().find("#cont").offset().left;
+    // round to nearest 370
+    var targetLeft = left + (left%370) + 370;
     $("#slidee").contents().find("#cont")
-	.animate({left:"-="+left},300);
+	.animate({left:targetLeft},300);
 }
 function moveRight() {
-    $("#slidee").contents().find("#cont").animate({left:"+=370"},300);
+    var right = $("#slidee").contents().find("#cont").offset().left;
+    // round to nearest 370
+    var targetRight = right - (right%370) - 370;
+    $("#slidee").contents().find("#cont")
+	.animate({left:targetRight},300);
 }
 
 // initial set
