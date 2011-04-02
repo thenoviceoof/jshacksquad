@@ -103,6 +103,7 @@ $(document).ready(function() {
 			     function(){moveRight()});
 	    }, 100);
 	loadVideos();
+
 	// do have to handle resizing
 	// $(document).resize(positionOverlays);
 
