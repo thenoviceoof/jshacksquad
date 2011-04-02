@@ -4,6 +4,10 @@
     display:block;
 }
 
+#content div {
+    outline:1px gray solid;
+}
+
 #content-container {
     margin-top:2em;
     margin-bottom:2em;
@@ -15,42 +19,12 @@
     display:inline-block;
 }
 
-#slidee-cont {
-    display:block;
-    width:370;
-    height:242;
-    overflow:hidden;
-}
-#slidee-cont img {
-    display:inline-block;
-}
-#slidee-cont a {
+#current-tutorial a {
     display:inline-block;
 }
 
-
-nav#left, nav#right {
-    display:block;
-    background-color:white;
-    opacity:0.3;
-    cursor:pointer;
-}
-nav#leftarrow {
-    border:2em solid rgba(0,0,0,0);
-    opacity:1;
-    width:0;padding:0;
-    border-width:2em 2em 2em 0;
-    border-color:rgba(0,0,0,0) #505050;
-}
-nav#rightarrow {
-    border:2em solid rgba(0,0,0,0);
-    opacity:1;
-    width:0;padding:0;
-    border-width:2em 0 2em 2em;
-    border-color:rgba(0,0,0,0) #505050;
-}
 #slider {
-    /* overflow:scroll; */
+    overflow:scroll;
     margin:1em;
 }
 
@@ -351,3 +325,4 @@ body {
 .clearfix {
     display: block;
 }
+

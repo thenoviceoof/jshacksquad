@@ -2,13 +2,6 @@
 // hs-grid.js
 // --------------------------------------------------------------------
 
-$(function() {
-	$("#slider").slider({value:50,});
-	$("#slider").bind("slide",function(event, ui) {
-		returnSlider(this);
-	    });
-    });
-
 function returnSlider(slider) {
     // if the slider is not already occupied
     // otherwise, we get a bajillion callbacks
@@ -88,11 +81,22 @@ function loadVideos() {
 // the actual things that move right or left
 ////// NOTE: discretize the movement
 function moveLeft() {
-    $("#slidee").contents().find("#cont").animate({left:"-=370"},300);
+    var left = $("#slidee").contents().find("#cont").css("left");
+    left ;
+    $("#slidee").contents().find("#cont")
+	.animate({left:"-="+left},300);
 }
 function moveRight() {
     $("#slidee").contents().find("#cont").animate({left:"+=370"},300);
 }
+
+// initial set
+$(function() {
+	$("#slider").slider({value:50,});
+	$("#slider").bind("slidestop",function(event, ui) {
+		returnSliderToMiddle(this);
+	    });
+    });
 
 $(document).ready(function() {
 	// timeout was here b/c of img loading earlier
