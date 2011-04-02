@@ -6,7 +6,7 @@ import socketserver
 PORT = 8000
 
 Handler = http.server.SimpleHTTPRequestHandler
-Handler.extensions_map = {"json":"text/json","html":"text/html"}
+Handler.extensions_map[".json"] = "application/json"
 
 httpd = socketserver.TCPServer(("", PORT), Handler)
 

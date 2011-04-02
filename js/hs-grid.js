@@ -92,11 +92,14 @@ hs.loadVideos = function () {
 	.css("padding",0)
 	.css("margin",0);
     $("#slidee").contents().find("body").append(cont);
-    $.ajax({
-	    url: "data.json",
-	    success: function(data) {alert(data);},
-	    dataType: "json"
+    $(document).ajaxError(function(event,request,settings) {
+	    alert("Error requesting page " + settings.url)
 	});
+    $.ajax({
+    	    url: "data.json",
+	    data: function(data) {alert(data);},
+    	    dataType: "html"
+    	});
 }
 
 // initial set
