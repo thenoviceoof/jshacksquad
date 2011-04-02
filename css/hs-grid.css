@@ -20,7 +20,7 @@
 }
 
 #slider {
-    overflow:scroll;
+    /* overflow:scroll; */
     margin:1em;
 }
 

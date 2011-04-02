@@ -10,6 +10,10 @@ function slideRight() {
 function positionOverlays() {
 }
 
+$(function() {
+	$( "#slider" ).slider();
+    });
+
 $(document).ready(function() {
 	positionOverlays();
 	/* */
