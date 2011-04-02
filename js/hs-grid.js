@@ -26,6 +26,10 @@ function returnSliderToMiddle(slider) {
     }
     var velocity = (50-val)/3;
     $(slider).slider("value",val+velocity);
+    // move the iframe contents, too
+    $("#slidee").contents().find("#cont")
+	.animate({left:"+="+velocity*5},0);
+    // recurse
     setTimeout(function(){returnSliderToMiddle(slider)},50);
 }
 
@@ -66,19 +70,43 @@ function initOverlays(target, actionLeft, actionRight) {
     $("#right").click(actionRight);
 }
 
-function moveLeft(target) {
-    $(target).animate();
+////// AJAX this?
+function loadVideos() {
+    var cont = $("<div/>").attr("id","cont")
+	.css("position","absolute");
+    var a = $("<a/>").attr("href","#");
+    var img = $("<img/>").attr("src","images/tut.png");
+    img.attr("width","370");
+    a.append(img);
+    cont.append(a);
+    $("#slidee").contents().find("body")
+	.css("padding",0)
+	.css("margin",0);
+    $("#slidee").contents().find("body").append(cont);
+}
+
+// the actual things that move right or left
+////// NOTE: discretize the movement
+function moveLeft() {
+    $("#slidee").contents().find("#cont").animate({left:"-=370"},300);
+}
+function moveRight() {
+    $("#slidee").contents().find("#cont").animate({left:"+=370"},300);
 }
 
 $(document).ready(function() {
+	// timeout was here b/c of img loading earlier
+	// may or may not need now
 	setTimeout(function() {
 		initOverlays($("#slidee-cont")[0],
-			     function(){alert("ehlo")},
-			     function(){});
+			     function(){moveLeft();},
+			     function(){moveRight()});
 	    }, 100);
+	loadVideos();
+	// do have to handle resizing
 	// $(document).resize(positionOverlays);
 
-	// load these guys up with AJAX
+	// to prevent page transitions, use AJAX instead
 	$(".categories").click(function(e){
 		e.preventDefault();
 		return false;
